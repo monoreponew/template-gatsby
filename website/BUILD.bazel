@@ -5,7 +5,7 @@ load("@genrules//terraform:index.bzl", "terraform")
 npm(
     name = "build",
     command = "run build",
-    output_directory = "build",
+    output_directory = "public",
     deps = [":deps"],
     local = True,
 )
@@ -19,9 +19,7 @@ gcs_deploy(
 filegroup(
     name = "deps",
     srcs = glob([
-        "pages/**",
-        "public/**",
-        "styles/**",
+        "src/**",
         "node_modules/**",
-    ]) + ["package.json", "package-lock.json"],
+    ]) + ["gatsby-config.ts", "package.json", "package-lock.json", "tsconfig.json"],
 )

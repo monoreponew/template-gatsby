@@ -1,1 +1,1 @@
-# Simple Next.js Static Template
+# Simple Gatsby Template
